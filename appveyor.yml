@@ -1,0 +1,10 @@
+install:
+  - ps: >-
+        robocopy /mir src dst /xf .git* /xd .git*;
+        cmd /r dir /a /s dst;
+        get-content -path src\.gitignore;
+        get-content -path dst\.gitignore;
+
+test: off
+
+build: off
